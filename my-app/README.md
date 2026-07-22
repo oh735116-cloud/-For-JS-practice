@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 페이지 별 설명
 
-## Getting Started
+## 홈 화면
 
-First, run the development server:
+1. 경로: app/page.tsx
+2. 기능: 메인화면,검색기능,영화한눈에보기
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 검색기능
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 사용API : http://~
+  검색창에 보고싶은 영화 제목을 넣으면 글자마다 즉시 검색을해 영화를 찾아준다
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 랭킹 화면
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. 경로: app/ranking/page.tsx
+2. 기능: 순위기능
 
-## Learn More
+### 순위기능
 
-To learn more about Next.js, take a look at the following resources:
+- 각 영화에 기능을 한눈에 볼수있다
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 상세페이지
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 경로: app/movies/[id]/page.tsx
+2. 기능: 상세보기기능 예고편
 
-## Deploy on Vercel
+### 상세보기기능
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- api를 활용 유튜브링크가져오기
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 개봉예정 화면
+
+1. 경로: app/upcoming/page.tsx
+
+## 영화화면
+
+1. 경로: app/movies/page.tsx

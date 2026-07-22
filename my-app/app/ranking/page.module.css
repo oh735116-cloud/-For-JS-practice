@@ -1,0 +1,170 @@
+.main {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 96px;
+}
+
+.heading {
+  margin-bottom: 38px;
+}
+
+.heading p {
+  margin: 0 0 6px;
+  color: #e50914;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.heading h1 {
+  margin: 0 0 12px;
+  font-size: clamp(40px, 7vw, 72px);
+  letter-spacing: -0.055em;
+}
+
+.heading span {
+  color: #a8a8b3;
+}
+
+.ranking {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 30px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ranking li {
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background: #17171d;
+  border: 1px solid #292932;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: #666674;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.42);
+  outline: none;
+  transform: translateY(-6px);
+}
+
+.rank {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  color: #fff;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  background: #e50914;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  color: #777782;
+  background: #22222a;
+}
+
+.poster img {
+  object-fit: cover;
+}
+
+.poster span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  padding: 8px;
+  place-items: center;
+  font-size: 12px;
+  text-align: center;
+}
+
+.info {
+  min-width: 0;
+  padding: 17px 16px 19px;
+}
+
+.info h2 {
+  margin: 0 0 12px;
+  overflow: hidden;
+  font-size: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.metadata {
+  display: grid;
+  gap: 5px;
+  color: #a8a8b3;
+  font-size: 14px;
+}
+
+.metadata span:first-child {
+  color: #46d369;
+  font-weight: 800;
+}
+
+.notice {
+  padding: 24px;
+  color: #c7c7cf;
+  background: #17171d;
+  border: 1px solid #292932;
+  border-radius: 14px;
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: min(100% - 28px, 1000px);
+    padding-top: 40px;
+  }
+
+  .ranking {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+
+  .rank {
+    top: 8px;
+    left: 8px;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .info {
+    padding: 13px 12px 15px;
+  }
+
+  .info h2 {
+    margin-bottom: 10px;
+    font-size: 17px;
+  }
+
+  .metadata {
+    display: grid;
+    gap: 4px;
+    font-size: 12px;
+  }
+}

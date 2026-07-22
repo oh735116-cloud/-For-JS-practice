@@ -1,0 +1,133 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(10, 10, 14, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  width: min(1200px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* 사이트 로고 */
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.logoIcon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding-left: 2px;
+  color: #ffffff;
+  font-size: 13px;
+  background: #e50914;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.35);
+}
+
+/* 메뉴 영역 */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.menuLink {
+  position: relative;
+  padding: 26px 0;
+  color: #b9b9c2;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.menuLink:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.menuLink::after {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  left: 0;
+  height: 2px;
+  background: #e50914;
+  border-radius: 10px;
+  content: "";
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.menuLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* 태블릿 */
+@media (max-width: 900px) {
+  .inner {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 14px 0;
+  }
+
+  .navigation {
+    order: 3;
+    width: 100%;
+    margin-top: 14px;
+    margin-left: 0;
+    gap: 22px;
+    overflow-x: auto;
+  }
+
+  .menuLink {
+    flex-shrink: 0;
+    padding: 8px 0;
+  }
+
+  .menuLink::after {
+    bottom: 2px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .inner {
+    width: min(100% - 28px, 1200px);
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .logoIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+}

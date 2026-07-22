@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-
+import Link from "next/link";
 import "./globals.css";
+import styles from "./MovieHeader.module.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,36 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <div className={styles.inner}>
+          {/* 사이트 로고 */}
+          <Link href="/" className={styles.logo}>
+            <span className={styles.logoIcon}>▶</span>
+            <span>MOVIE PICK</span>
+          </Link>
+
+          {/* 주요 메뉴 */}
+          <nav className={styles.navigation} aria-label="주요 메뉴">
+            <Link href="/" className={styles.menuLink}>
+              홈
+            </Link>
+
+            <Link href="/movies" className={styles.menuLink}>
+              영화
+            </Link>
+
+            <Link href="/ranking" className={styles.menuLink}>
+              인기 순위
+            </Link>
+
+            <Link href="/upcoming" className={styles.menuLink}>
+              개봉 예정
+            </Link>
+          </nav>
+        </div>
+
+        {children}
+      </body>
     </html>
   );
 }
